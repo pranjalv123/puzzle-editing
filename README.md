@@ -8,8 +8,18 @@ Currently being hacked by Random Fish in preparation for the 2015 Hunt.
 
 * Log into your mysql database server with full administrative priviliges.
 * Create a puzzletron user
+ 
+        CREATE USER '<mysqlusername>' IDENTIFIED BY '<mypassword>';
+
 * Create a puzzletron database
+ 
+        CREATE DATABASE <databasename>;
+
 * Grant the puzzletron user access to that database
+
+        GRANT ALL ON <databasename>.* TO '<mysqlusername>'
+
+* Then execute
 
         mysql -u <mysqlusername> -s <servername> -p <databasename> < schema.sql
 
